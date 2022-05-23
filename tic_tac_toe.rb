@@ -65,3 +65,46 @@ def start_game
   puts "#{player_two_name}, will have O's!  Sorry about your luck :(", ' '
   $board.draw_outline
 end
+
+# Will set invalid choices into this next method(s) #
+
+def player_one_moves
+  puts "#{$player_one.name}: Please choose an available space to place your X by selecting the corresponding number."
+  $move = gets.chomp
+
+  until $valid_moves.include? $move
+    puts 'Invalid move you big dummy! Just kidding!  Will you please try agian?'
+    $move = gets.chomp
+  end
+
+  case $move
+  when '1'
+    $board.position_one = 'X'
+    $valid_moves.delete('1')
+  when '2'
+    $board.position_two = 'X'
+    $valid_moves.delete('2')
+  when '3'
+    $board.position_three = 'X'
+    $valid_moves.delete('3')
+  when '4'
+    $board.position_four = 'X'
+    $valid_moves.delete('4')
+  when '5'
+    $board.position_five = 'X'
+    $valid_moves.delete('5')
+  when '6'
+    $board.position_six = 'X'
+    $valid_moves.delete('6')
+  when '7'
+    $board.position_seven = 'X'
+    $valid_moves.delete('7')
+  when '8'
+    $board.position_eight = 'X'
+    $valid_moves.delete('8')
+  when '9'
+    $board.position_nine = 'X'
+    $valid_moves.delete('9')
+  end
+end
+
