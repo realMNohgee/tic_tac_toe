@@ -44,23 +44,24 @@ class BoardOutline
   end
 end
   
-class 
+class Players
+  attr_accessor :name, :marker
   
+  def initialize(name, marker)
+    @name = name
+    @marker = marker
   end
+end
 
-  def winning_player
-  
-  end
-
-# list of possible winning combinations #
-
-  def player_move(row, column)
-  
-  end
-
-  def game_play()
-
-  end
-
-
+def start_game
+  $board = BoardOutline.new(1, 2, 3, 4, 5, 6, 7, 8, 9)
+  puts 'Player one please enter your name:'
+  player_one_name = gets.chomp
+  $player_one = Players.new(player_one_name, 'X')
+  puts "#{player_one_name}, LUCKY YOU! You will have X's and X's go first!", ' '
+  puts 'Player two please enter your name:'
+  player_two_name = gets.chomp
+  $player_two = Players.new(player_two_name, 'O')
+  puts "#{player_two_name}, will have O's!  Sorry about your luck :(", ' '
+  $board.draw_outline
 end
