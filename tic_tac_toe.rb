@@ -177,11 +177,31 @@ end
 
 def game_tied
   if $valid_moves.empty? && !winner
-    puts "Game over!  You tied!"
-    $tied = true
+    puts "Game over!  It's a tie!"
+    $tie = true
   end
 end
 
+def game_play
+  $winner = nil
+  $tie = false
+  while !$winner && !$tie 
+    player_one_moves
+    $board.draw_outline
+    calculate_winner
+    game_tied
+    next unless !$winner && !$tie
+
+    player_two_moves
+    $board.draw_outline
+    calculate_winner
+    game_tied
+  end
+end
+
+start_game
+game_play
+    
 
 
 
