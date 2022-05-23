@@ -170,7 +170,16 @@ def calculate_winner
     $board.position_three == 'O' && $board.position_six == 'O' && $board.position_nine == 'O' ||
     $board.position_one == 'O' && $board.position_five == 'O' && $board.position_nine == 'O' ||
     $board.position_three == 'O' && $board.position_five == 'O' && $board.position_seven == 'O' ||
+    $winner = $player_two.name
+      puts "Game over, #{$winner} wins!"
  end
+end
+
+def game_tied
+  if $valid_moves.empty? && !winner
+    puts "Game over!  You tied!"
+    $tied = true
+  end
 end
 
 
