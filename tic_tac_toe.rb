@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'pry-byebug'
 
 # pseudocode #
@@ -15,8 +17,8 @@ require 'pry-byebug'
 
 class BoardOutline
   $valid_moves = %w[1 2 3 4 5 6 7 8 9]
-  attr_accessor :position_one, :position_two, :position_three, :position_four, 
-  :position_five, :position_six, :position_seven, :position_eight, :position_nine
+  attr_accessor :position_one, :position_two, :position_three, :position_four,
+                :position_five, :position_six, :position_seven, :position_eight, :position_nine
 
   def initialize(p1, p2, p3, p4, p5, p6, p7, p8, p9)
     @position_one = p1
@@ -30,7 +32,6 @@ class BoardOutline
     @position_nine = p9
   end
 
-
   def draw_outline
     puts "
     #{@position_one} | #{@position_two} | #{@position_three}
@@ -38,15 +39,14 @@ class BoardOutline
     #{@position_four} | #{@position_five} | #{@position_six}
     --+---+--
     #{@position_seven} | #{@position_eight} | #{@position_nine}
-    
-    "
 
+    "
   end
 end
-  
+
 class Players
   attr_accessor :name, :marker
-  
+
   def initialize(name, marker)
     @name = name
     @marker = marker
@@ -157,26 +157,26 @@ def calculate_winner
      $board.position_two == 'X' && $board.position_five == 'X' && $board.position_eight == 'X' ||
      $board.position_three == 'X' && $board.position_six == 'X' && $board.position_nine == 'X' ||
      $board.position_one == 'X' && $board.position_five == 'X' && $board.position_nine == 'X' ||
-     $board.position_three == 'X' && $board.position_five == 'X' && $board.position_seven == 'X' ||
+     $board.position_three == 'X' && $board.position_five == 'X' && $board.position_seven == 'X' 
      $winner = $player_one.name
-      puts "Game over, #{$winner} wins!"
-  end 
+    puts "Game over, #{$winner} wins!"
+  end
 
   if $board.position_one == 'O' && $board.position_two == 'O' && $board.position_three == 'O' ||
-    $board.position_four == 'O' && $board.position_five == 'O' && $board.position_six == 'O' ||
-    $board.position_seven == 'O' && $board.position_eight == 'O' && $board.position_nine == 'O' ||
-    $board.position_one == 'O' && $board.position_four == 'O' && $board.position_seven == 'O' ||
-    $board.position_two == 'O' && $board.position_five == 'O' && $board.position_eight == 'O' ||
-    $board.position_three == 'O' && $board.position_six == 'O' && $board.position_nine == 'O' ||
-    $board.position_one == 'O' && $board.position_five == 'O' && $board.position_nine == 'O' ||
-    $board.position_three == 'O' && $board.position_five == 'O' && $board.position_seven == 'O' ||
-    $winner = $player_two.name
-      puts "Game over, #{$winner} wins!"
- end
+     $board.position_four == 'O' && $board.position_five == 'O' && $board.position_six == 'O' ||
+     $board.position_seven == 'O' && $board.position_eight == 'O' && $board.position_nine == 'O' ||
+     $board.position_one == 'O' && $board.position_four == 'O' && $board.position_seven == 'O' ||
+     $board.position_two == 'O' && $board.position_five == 'O' && $board.position_eight == 'O' ||
+     $board.position_three == 'O' && $board.position_six == 'O' && $board.position_nine == 'O' ||
+     $board.position_one == 'O' && $board.position_five == 'O' && $board.position_nine == 'O' ||
+     $board.position_three == 'O' && $board.position_five == 'O' && $board.position_seven == 'O' 
+     $winner = $player_two.name
+    puts "Game over, #{$winner} wins!"
+  end
 end
 
 def game_tied
-  if $valid_moves.empty? && !winner
+  if $valid_moves.empty? && !$winner
     puts "Game over!  It's a tie!"
     $tie = true
   end
@@ -185,7 +185,7 @@ end
 def game_play
   $winner = nil
   $tie = false
-  while !$winner && !$tie 
+  while !$winner && !$tie
     player_one_moves
     $board.draw_outline
     calculate_winner
@@ -201,7 +201,3 @@ end
 
 start_game
 game_play
-    
-
-
-
