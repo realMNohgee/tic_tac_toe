@@ -14,15 +14,30 @@ require 'pry-byebug'
 
 class TicTacToe
   def initialize()
+  
   end
 
   def switch_player
+  
   end
 
   def winning_player
-  end
   
+  end
+
 # list of possible winning combinations #
 
-  def game_board
+  def player_move(row, column)
+  
+  end
+
+  def board_outline
+
+  end
+
+  def game_play()
+
+  end
+
+  
 end
