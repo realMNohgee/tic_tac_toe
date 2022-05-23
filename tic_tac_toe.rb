@@ -6,13 +6,13 @@ require 'pry-byebug'
 # take players_one and players_two names (class?) (done) #
 # tell them what symbols they will use (class?) (done) #
 # design game_board (method?) (Used class and done) #
-# winning combinations (method?) #
-# some type of loop (infinte loop inside of own method?) (not needed) #
-# if board is full game is tied #
-# if tied ask to play again? #
-# if there is a winner, congratulations are in order #
+# winning combinations (method?) (done) #
+# some type of loop (infinte loop inside of own method?) (not needed/was thinking I needed it for AI player) #
+# if board is full game is tied (done) #
+# if tied ask to play again? (nope just exits) #
+# if there is a winner, congratulations are in order (done) #
 # something for invalid entries  (done) #
-# some way to exit game if wanted #
+# some way to exit game if wanted (done with auto kick) #
 # possibly set up a simple AI to play against when only one player is available (will come back when I learn how) #
 
 class BoardOutline
