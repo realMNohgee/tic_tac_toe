@@ -1,17 +1,17 @@
 require 'pry-byebug'
 
 # pseudocode #
-# take players_one and players_two names (class?) #
-# ask players what symbols they want to use (class?) #
-# design game_board (method?) #
+# take players_one and players_two names (class?) (done) #
+# tell them what symbols they will use (class?) (done) #
+# design game_board (method?) (Used class and done) #
 # winning combinations (method?) #
-# some type of loop (infinte loop inside of own method?) #
+# some type of loop (infinte loop inside of own method?) (not needed) #
 # if board is full game is tied #
 # if tied ask to play again? #
 # if there is a winner, congratulations are in order #
-# something for invalid entries #
+# something for invalid entries  (done) #
 # some way to exit game if wanted #
-# possibly set up a simple AI to play against when only one player is available #
+# possibly set up a simple AI to play against when only one player is available (will come back when I learn how) #
 
 class BoardOutline
   $valid_moves = %w[1 2 3 4 5 6 7 8 9]
@@ -148,4 +148,5 @@ def player_two_moves
     $valid_moves.delete('9')
   end
 end
+
 
