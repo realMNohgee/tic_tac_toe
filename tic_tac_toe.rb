@@ -31,7 +31,7 @@ class BoardOutline
   end
 
 
-  def board_outline
+  def draw_outline
     puts "
     #{@position_one} | #{@position_two} | #{@position_three}
     --+---+--
