@@ -11,3 +11,18 @@ require 'pry-byebug'
 # if there is a winner, congratulations are in order #
 # some way to exit game if wanted #
 # possibly set up a simple AI to play against when only one player is available #
+
+class TicTacToe
+  def initialize()
+  end
+
+  def switch_player
+  end
+
+  def winning_player
+  end
+  
+# list of possible winning combinations #
+
+  def game_board
+end
