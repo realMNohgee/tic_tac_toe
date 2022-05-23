@@ -149,4 +149,30 @@ def player_two_moves
   end
 end
 
+def calculate_winner
+  if $board.position_one == 'X' && $board.position_two == 'X' && $board.position_three == 'X' ||
+     $board.position_four == 'X' && $board.position_five == 'X' && $board.position_six == 'X' ||
+     $board.position_seven == 'X' && $board.position_eight == 'X' && $board.position_nine == 'X' ||
+     $board.position_one == 'X' && $board.position_four == 'X' && $board.position_seven == 'X' ||
+     $board.position_two == 'X' && $board.position_five == 'X' && $board.position_eight == 'X' ||
+     $board.position_three == 'X' && $board.position_six == 'X' && $board.position_nine == 'X' ||
+     $board.position_one == 'X' && $board.position_five == 'X' && $board.position_nine == 'X' ||
+     $board.position_three == 'X' && $board.position_five == 'X' && $board.position_seven == 'X' ||
+     $winner = $player_one.name
+      puts "Game over, #{$winner} wins!"
+  end 
+
+  if $board.position_one == 'O' && $board.position_two == 'O' && $board.position_three == 'O' ||
+    $board.position_four == 'O' && $board.position_five == 'O' && $board.position_six == 'O' ||
+    $board.position_seven == 'O' && $board.position_eight == 'O' && $board.position_nine == 'O' ||
+    $board.position_one == 'O' && $board.position_four == 'O' && $board.position_seven == 'O' ||
+    $board.position_two == 'O' && $board.position_five == 'O' && $board.position_eight == 'O' ||
+    $board.position_three == 'O' && $board.position_six == 'O' && $board.position_nine == 'O' ||
+    $board.position_one == 'O' && $board.position_five == 'O' && $board.position_nine == 'O' ||
+    $board.position_three == 'O' && $board.position_five == 'O' && $board.position_seven == 'O' ||
+ end
+end
+
+
+
 
